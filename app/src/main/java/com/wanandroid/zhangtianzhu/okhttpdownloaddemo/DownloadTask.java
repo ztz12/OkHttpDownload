@@ -23,7 +23,7 @@ public class DownloadTask extends Handler {
 
     private FilePoint mPoint;
     /**
-     * 下载文件长度
+     * 下载文件总大小
      */
     private long mFileLength;
 
@@ -143,7 +143,7 @@ public class DownloadTask extends Handler {
                         resetStatus();
                         return;
                     }
-                    //下载文件长度
+                    //下载文件大小
                     mFileLength = response.body().contentLength();
                     close(response.body());
                     // 在本地创建一个与资源同样大小的文件来占位
@@ -174,6 +174,7 @@ public class DownloadTask extends Handler {
 
     /**
      * 各线程下载指定好的文件内容，并写入指定的空文件位置，直到四个线程都下载完毕，这个空文件就相当于我们完整的文件，只是格式不对，重命名就可以
+     *
      * @param startIndex
      * @param endIndex
      * @param threadId

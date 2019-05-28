@@ -36,7 +36,7 @@ public class HttpUtil {
         Request request = new Request.Builder().header("RANGE", "bytes=" + startIndex + "-" + endIndex)
                 .url(url)
                 .build();
-        doAsync(request,callback);
+        doAsync(request, callback);
     }
 
     /**
@@ -49,7 +49,7 @@ public class HttpUtil {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
-        doAsync(request,callback);
+        doAsync(request, callback);
     }
 
     /**
